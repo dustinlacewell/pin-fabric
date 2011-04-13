@@ -13,12 +13,12 @@ class PinFabCommand(command.PinBaseCommandDelegator):
     '''
     command = 'fab'
 
-    def _get_subcommands():
+    @classmethod
+    def get_subcommands(cls):
         cwd = os.getcwd()
         root = get_project_root(cwd)
         doc, tasks = load_fabfile(os.path.join(root, 'fabfile.py'))
-        return [(task, tasks[task].__doc__) for task in tasks]
-    subcommands = _get_subcommands()
+        return tasks
 
     def execute(self, cwd, root):
         os.chdir(root)
