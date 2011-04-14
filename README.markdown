@@ -17,7 +17,7 @@ pin-fabric provides 'project-wide' access to commands inside your fabfile.py fil
         fab  --------------------------------------------------------------------------
              Commands inside your fabfile.
              update_remote  - Update deployment server and restart apache
-                push_local  - Push locally commited changes
+             push_local  - Push locally commited changes
 
 ### Commands
 
